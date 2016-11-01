@@ -1,6 +1,6 @@
 class LifeMeasuresController < ApplicationController
   def index
-    @life_measures = LifeMeasure.all
+    @life_measures = LifeMeasure.page(params[:page])
   end
 
   def show
