@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @life_measure.errors.any? %>
+  <% @life_measure.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Life Measure</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_life_measure" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for goal_name -->
+      <div class="form-group">
+        <label for="goal_name" class="control-label">
+          Goal name
+        </label>
+
+        <input type="text" id="goal_name" name="goal_name" placeholder="Goal name" class="form-control" value="<%= @life_measure.goal_name %>">
+      </div>
+
+      <!-- Label and input for target_frequency -->
+      <div class="form-group">
+        <label for="target_frequency" class="control-label">
+          Target frequency
+        </label>
+
+        <input type="text" id="target_frequency" name="target_frequency" placeholder="Target frequency" class="form-control" value="<%= @life_measure.target_frequency %>">
+      </div>
+
+      <!-- Label and input for time_span -->
+      <div class="form-group">
+        <label for="time_span" class="control-label">
+          Time span
+        </label>
+
+        <input type="text" id="time_span" name="time_span" placeholder="Time span" class="form-control" value="<%= @life_measure.time_span %>">
+      </div>
+
+      <!-- Label and input for start_date -->
+      <div class="form-group">
+        <label for="start_date" class="control-label">
+          Start date
+        </label>
+
+        <input type="text" id="start_date" name="start_date" placeholder="Start date" class="form-control" value="<%= @life_measure.start_date %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @life_measure.user_id %>">
+      </div>
+
+      <!-- Label and input for times_completed -->
+      <div class="form-group">
+        <label for="times_completed" class="control-label">
+          Times completed
+        </label>
+
+        <input type="text" id="times_completed" name="times_completed" placeholder="Times completed" class="form-control" value="<%= @life_measure.times_completed %>">
+      </div>
+
+      <!-- Label and input for category_id -->
+      <div class="form-group">
+        <label for="category_id" class="control-label">
+          Category
+        </label>
+
+        <input type="text" id="category_id" name="category_id" placeholder="Category" class="form-control" value="<%= @life_measure.category_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Life Measure
+      </button>
+      or
+      <a href="/life_measures">Cancel</a>
+    </form>
+  </div>
+</div>

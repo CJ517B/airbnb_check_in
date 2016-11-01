@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Life Measure #<%= @life_measure.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Goal name</dt>
+      <dd><%= @life_measure.goal_name %></dd>
+
+      <dt>Target frequency</dt>
+      <dd><%= @life_measure.target_frequency %></dd>
+
+      <dt>Time span</dt>
+      <dd><%= @life_measure.time_span %></dd>
+
+      <dt>Start date</dt>
+      <dd><%= @life_measure.start_date %></dd>
+
+      <dt>User</dt>
+      <dd><%= @life_measure.user_id %></dd>
+
+      <dt>Times completed</dt>
+      <dd><%= @life_measure.times_completed %></dd>
+
+      <dt>Category</dt>
+      <dd><%= @life_measure.category_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/life_measures" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/life_measures/<%= @life_measure.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_life_measure/<%= @life_measure.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
