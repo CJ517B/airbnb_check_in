@@ -27,7 +27,7 @@
         <td><%= life_measure.start_date %></td>
         <td><%= life_measure.user.username %></td>
         <td><%= life_measure.times_completed %></td>
-        <td><%= life_measure.category_id %></td>
+        <td><%= life_measure.category.name %></td>
         <td>
           <a href="/life_measures/<%= life_measure.id %>" class="btn btn-primary">Show</a>
           <a href="/life_measures/<%= life_measure.id %>/edit" class="btn btn-warning">Edit</a>
