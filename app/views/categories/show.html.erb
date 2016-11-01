@@ -23,3 +23,32 @@
     </div>
   </div>
 </div>
+
+<!-- A Category has many life_measures -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Life_measures
+      </li>
+
+      <% @category.life_measures.each do |life_measure| %>
+        <li class="list-group-item">
+          <a href="/life_measures/<%= life_measure.id %>">
+            <%= life_measure.goal_name %>
+          </a>
+          <a href="/life_measures/<%= life_measure.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/life_measures/<%= life_measure.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_life_measure/<%= life_measure.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
